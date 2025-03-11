@@ -1,0 +1,5 @@
+<div id="<%= dom_id(@pointing_session)_votes %>">
+  <% if @pointing_session.topic.present? && !@participant.vote.blank? %>
+    <%= render :partial, 'vote_form' %>
+  <% end %>
+</div>

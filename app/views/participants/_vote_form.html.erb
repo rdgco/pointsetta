@@ -1,0 +1,14 @@
+
+<div id='<%= "#{dom_id(participant)}_vote" %>'>
+  <% if pointing_session.topic.present? %>
+    <% if participant.vote.blank? %>
+      <%= "Vote as #{participant.name}" %>
+      <%=  form_with model: participant, url: vote_participant_path(participant), method: :post do |form| %>
+        <%= form.search_field(:vote, class: 'create_input') %>
+        <%= form.submit("Vote") %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= render partial: '/participants/form', locals: { participant: participant, pointing_session: pointing_session } %>
+  <% end %>
+</div>

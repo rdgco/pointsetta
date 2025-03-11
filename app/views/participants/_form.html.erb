@@ -1,0 +1,8 @@
+<div id='<%= "#{dom_id(participant)}_form" %>' >
+  <%= form_with model: [participant]  do |form| %>
+    <%= form.label "Your alias" %>
+    <%= form.search_field(:name, class: 'create_input') %>
+    <%= form.submit("Update") %>
+  <% end %>
+</div>
+

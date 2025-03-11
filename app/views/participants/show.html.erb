@@ -1,0 +1,14 @@
+<%= link_to "All Pointing Sessions", "/" %>
+<h1>
+  Pointing Session: <%= @pointing_session.name %>
+</h1>
+
+<h2>
+  Welcome Participant! <%= @participant.name %>
+</h2>
+
+<%= "Current Vote Topic: #{@pointing_session.topic || 'None'}" %>
+
+
+<%= render "votes/form" %>
+

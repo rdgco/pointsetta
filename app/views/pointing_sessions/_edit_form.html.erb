@@ -1,0 +1,5 @@
+  <%= form_with model: @pointing_session, local: false do |form| %>
+    <%= form.search_field(:topic, class: 'create_input') %>
+    <%= form.submit("Set Topic") %>
+  <% end %>
+  

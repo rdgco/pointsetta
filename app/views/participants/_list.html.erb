@@ -1,0 +1,10 @@
+<div id="participants" class="list">
+  <h3>Participants:</h3>
+  <table>
+    <% pointing_session.participants.each do |participant| %>
+      <tr id='<%= dom_id(participant) %>'>
+        <%= render participant %>
+      </tr>
+    <% end %>
+  </table>
+</div>

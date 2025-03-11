@@ -1,0 +1,13 @@
+<h1>Pointing Sessions</h2>
+
+<%= render partial: "new_form" %>
+<%= render partial: "pointing_session", collection: @pointing_sessions %>
+<% if @pointing_sessions.stale.count > 0 %>
+  <%= form_with(url: destroy_stale_pointing_sessions_path, method: :post) do |form| %>
+    <%= form.submit('Destroy Stale Sessions') %>
+  <% end %>
+<% end %>
+
+
+
+

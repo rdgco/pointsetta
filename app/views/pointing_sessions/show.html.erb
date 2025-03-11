@@ -1,0 +1,14 @@
+<%= link_to "All Pointing Sessions", "/" %>
+
+<%= turbo_stream_from(@pointing_session) %>
+
+<h1> <%= @pointing_session.name %> </h1>
+
+<div id="<%= dom_id(@pointing_session) %>">
+  <h3> <%= "Topic: #{@pointing_session.topic || 'None'} " %> </h3>
+</div>
+
+<%= render partial: "pointing_sessions/edit_form" if @participant.administrator %>
+<%= render partial: 'participants/list', locals: { pointing_session: @pointing_session } %>
+<%= render partial: 'participants/vote_form', locals: { participant: @participant, pointing_session: @pointing_session } %>
+
