@@ -25,8 +25,9 @@ class PointingSessionsController < ApplicationController
   def show
     @pointing_session = PointingSession.find(params[:id])
     if session[:participant_id]
-      @participant = Participant.find(session[:participant_id])
+      @participant = Participant.find_by(id: session[:participant_id])
     end
+
     if !@participant || @participant.pointing_session != @pointing_session
       @participant = @pointing_session.participants.create(name: Faker::FunnyName.name, administrator: @pointing_session.participants.empty?)
       session[:participant_id] = @participant.id
