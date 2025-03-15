@@ -8,3 +8,18 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ .body {
+  background-size: cover;
+  background-image: url('pointsetta-faded.svg');
+ }
+
+ .pointing-session-name {
+    margin: 1em 0;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      font-size: 28px;
+    }
+ }

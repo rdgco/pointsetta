@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pointing_sessions#index"
   resources :pointing_sessions do
-    post :destroy_stale, on: :collection
     resources :participants, only: [ :index, :create ]
   end
 

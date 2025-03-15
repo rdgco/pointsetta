@@ -34,11 +34,6 @@ class PointingSessionsController < ApplicationController
     end
   end
 
-  def destroy_stale
-    PointingSession.stale.each(&:destroy)
-    redirect_to pointing_sessions_path
-  end
-
   private
 
   def new_pointing_session_params

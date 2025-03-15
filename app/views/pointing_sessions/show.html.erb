@@ -1,8 +1,13 @@
-<%= link_to "All Pointing Sessions", "/" %>
+<%= link_to "Pointsetta Root", "/" %>
 
 <%= turbo_stream_from(@pointing_session) %>
 
-<h1> <%= @pointing_session.name %> </h1>
+<div class="pointing-session-name">
+  <span class="title">Session: <%= @pointing_session.name %></span>
+  <div class="copy-button" data-controller="clipboard" data-clipboard-text-value="<%= pointing_session_url(@pointing_session) %>">
+    <button data-action="click->clipboard#copy">Copy URL</button>
+  </div>
+</div>
 
 <div id="<%= dom_id(@pointing_session) %>">
   <h3> <%= "Topic: #{@pointing_session.topic || 'None'} " %> </h3>
